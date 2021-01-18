@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import faker from 'faker';
+import Fetch from './components/Fetch';
+import { useIterator } from './hook/useIterator';
+import Menu from './components/RepoMenu'
+import A from './components/GitHubUser';
+// import A from './components/UserDetails';
+// import A from './Virtualizaed';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <A ></A>
   );
 }
 
-export default App;
+const loadJSON = key => key && JSON.parse(localStorage.getItem(key));
+const saveJSON = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+
+
